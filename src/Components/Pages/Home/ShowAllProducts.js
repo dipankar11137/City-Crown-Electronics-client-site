@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 
-const Products = () => {
+const ShowAllProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-
   return (
     <div>
-      <div className="grid justify-items-center">
+      <div className="grid justify-items-center mt-5">
         <div class="text-6xl font-extrabold mb-5">
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 uppercase ">
             Our Main Products
@@ -35,18 +34,15 @@ const Products = () => {
                   </th>
                 </tr>
               </thead>
-              {products.slice(0, 6).map((product) => (
+              {products.map((product) => (
                 <Product key={product._id} product={product}></Product>
               ))}
             </table>
           </div>
         </div>
       </div>
-      <div className="grid justify-items-end lg:pr-32 my-3">
-        <button className="btn font-bold">Show All </button>
-      </div>
     </div>
   );
 };
 
-export default Products;
+export default ShowAllProducts;
