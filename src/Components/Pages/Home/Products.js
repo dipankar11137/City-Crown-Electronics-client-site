@@ -12,8 +12,8 @@ const Products = () => {
   return (
     <div>
       <div className="grid justify-items-center">
-        <div class="text-6xl font-extrabold mb-5">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 uppercase ">
+        <div class="text-6xl font-extrabold mb-5 text-center">
+          <span class=" bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 uppercase ">
             Our Main Products
           </span>
         </div>
