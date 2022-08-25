@@ -1,10 +1,14 @@
 import "./App.css";
+import Home from "./Components/Pages/Home/Home";
+import Header from "./Components/Pages/Share/Header";
+import Navbar from "./Components/Pages/Share/Navbar";
 
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
-      <button class="btn btn-primary">Button</button>
+      <Header/>
+      <Navbar />
+      <Home />
     </div>
   );
 }
