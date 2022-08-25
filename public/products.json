@@ -1,0 +1,72 @@
+[
+  {
+    "_id": 1,
+    "name": "Laptop",
+    "price": "53000",
+    "quantity": "4",
+    "supplierName": "Dipu",
+    "description": "from USA",
+    "img": "https://i.ibb.co/C6SwnVc/ele-2.jpg",
+    "date": "4-5-22"
+  },
+  {
+    "_id": 2,
+    "name": "Mobile",
+    "price": "23000",
+    "quantity": "3",
+    "supplierName": "Messi",
+    "description": "from China",
+    "img": "https://i.ibb.co/m58cx3Y/ele-3.jpg",
+    "date": "4-5-22"
+  },
+  {
+    "_id": 3,
+    "name": "TV",
+    "price": "35000",
+    "quantity": "1",
+    "supplierName": "Ronaldo",
+    "description": "from UK",
+    "img": "https://i.ibb.co/xGjWRjj/ele-1.jpg",
+    "date": "4-5-22"
+  },
+  {
+    "_id": 4,
+    "name": "Laptop",
+    "price": "53000",
+    "quantity": "2",
+    "supplierName": "Naymer",
+    "description": "from India",
+    "img": "https://i.ibb.co/3dpzWP6/ele-4.jpg",
+    "date": "4-5-22"
+  },
+  {
+    "_id": 5,
+    "name": "Freeze",
+    "price": "28000",
+    "quantity": "6",
+    "supplierName": "Ramus",
+    "description": "from Japan",
+    "img": "https://i.ibb.co/C6SwnVc/ele-2.jpg",
+    "date": "4-5-22"
+  },
+  {
+    "_id": 6,
+    "name": "Radio",
+    "price": "53000",
+    "quantity": "22",
+    "supplierName": "Play",
+    "description": "from India",
+    "img": "https://i.ibb.co/3dpzWP6/ele-4.jpg",
+    "date": "4-5-22"
+  },
+  {
+    "_id": 7,
+    "name": "Earphone",
+    "price": "3000",
+    "quantity": "7",
+    "supplierName": "Romero",
+    "description": "from China",
+    "img": "https://i.ibb.co/xGjWRjj/ele-1.jpg",
+    "date": "4-5-22"
+  }
+]
