@@ -1,7 +1,32 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 import logo from "../../Images/Logo/ce-removebg-preview.png";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
+
+  const manuItem = (
+    <>
+      <li className="font-bold">
+        <Link to="/about">About</Link>
+      </li>
+      <li className="font-bold">
+        <Link to="/blogs">Blogs</Link>
+      </li>
+      <li className="font-bold">
+        <Link to="/contact">Contact</Link>
+      </li>
+    </>
+  );
+
   return (
     <div class="navbar bg-slate-800 text-white">
       <div class="navbar-start">
@@ -26,38 +51,28 @@ const Navbar = () => {
             tabindex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Blogs</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
+            {manuItem}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl ">
-          <img className="w-20 rounded-2xl " src={logo} alt="" />
-        </a>
+        <Link to="/">
+          <a className="btn btn-ghost normal-case text-xl ">
+            <img className="w-20 rounded-2xl " src={logo} alt="" />
+          </a>
+        </Link>
       </div>
       <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
-          <li>
-            <a>About</a>
-          </li>
-          <li>
-            <a>Blogs</a>
-          </li>
-          <li>
-            <a>Contact</a>
-          </li>
-        </ul>
+        <ul class="menu menu-horizontal p-0">{manuItem}</ul>
       </div>
-      <div class="navbar-end">
+      <div class="navbar-end pr-10">
         <ul>
-          <li>
-            <a>Log IN</a>
+          <li className=" font-bold">
+            {user ? (
+              <button className=" font-bold" onClick={logout}>
+                Sign Out
+              </button>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </li>
         </ul>
       </div>

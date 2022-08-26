@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Product from "./Product";
 
 const Products = () => {
@@ -43,7 +44,9 @@ const Products = () => {
         </div>
       </div>
       <div className="grid justify-items-end lg:pr-32 my-3">
-        <button className="btn font-bold">Show All </button>
+        <Link to="/showAllProducts">
+          <button className="btn font-bold">Show All </button>
+        </Link>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="bg-slate-900 text-white py-2 px-6">
       <div className="flex justify-between">
-        <div>
+        <div className="h-full items-center">
           <h1 className=" sm: text-2xl lg:text-3xl font-bold text-lime-400 ">
             City
             <span className="text-orange-500 hover:text-lime-400">

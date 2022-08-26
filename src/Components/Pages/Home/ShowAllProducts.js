@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../Share/Footer";
 import Product from "./Product";
 
 const ShowAllProducts = () => {
@@ -10,7 +11,7 @@ const ShowAllProducts = () => {
   }, []);
   return (
     <div>
-      <div className="grid justify-items-center mt-5">
+      <div className="grid justify-items-center my-5">
         <div class="text-6xl font-extrabold mb-5">
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 uppercase ">
             Our Main Products
@@ -41,6 +42,7 @@ const ShowAllProducts = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

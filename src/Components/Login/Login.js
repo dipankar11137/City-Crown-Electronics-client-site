@@ -132,12 +132,12 @@ const Login = () => {
             </small>
           </p>
           <div className="divider">OR</div>
-          {/* <button
+          <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-outline font-black"
+            className="btn btn-outline font-black hover:bg-orange-500"
           >
             Continue With Google
-          </button> */}
+          </button>
         </div>
       </div>
     </div>
