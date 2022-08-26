@@ -9,9 +9,9 @@ const Tools = () => {
       .then((data) => setTools(data));
   }, []);
   return (
-    <div className="sm:mb-2 sm:p-0 lg:mb-6 lg:p-6  bg-slate-200 mx-8 rounded-lg my-6">
-      <div class="lg:text-6xl pt-5 text-center font-extrabold mb-5">
-        <span class="bg-clip-text  text-transparent bg-gradient-to-r from-pink-500 to-violet-500 uppercase">
+    <div className="sm:mb-2 sm:p-0 lg:mb-6 lg:p-6  bg-stone-200 mx-8 rounded-lg my-6">
+      <div class="lg:text-5xl  text-center font-extrabold mb-5">
+        <span class="bg-clip-text  text-transparent bg-gradient-to-r from-pink-900 to-violet-900 uppercase">
           Mobile Phone Accessories
         </span>
       </div>

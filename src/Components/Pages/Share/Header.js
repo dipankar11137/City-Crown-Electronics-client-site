@@ -1,18 +1,22 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="bg-slate-900 text-white py-2 px-6">
       <div className="flex justify-between">
         <div className="h-full items-center">
-          <h1 className=" sm: text-2xl lg:text-3xl font-bold text-lime-400 ">
-            City
-            <span className="text-orange-500 hover:text-lime-400">
-              Crow
-            </span>n{" "}
-            <span className="font-extrabold hover:text-orange-500">Electr</span>
-            onics
-          </h1>
+          <Link to="/">
+            <h1 className=" sm: text-2xl lg:text-3xl font-bold text-lime-400 ">
+              City
+              <span className="text-orange-500 hover:text-lime-400">
+                Crow
+              </span>n{" "}
+              <span className="font-extrabold hover:text-orange-500">
+                Electr
+              </span>
+              onics
+            </h1>
+          </Link>
         </div>
         <div>
           <label tabindex="0" class="btn btn-ghost btn-circle mr-3">
