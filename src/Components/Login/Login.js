@@ -8,7 +8,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 import Loading from "../Pages/Share/Loading";
-// import useToken from "../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -133,12 +132,12 @@ const Login = () => {
             </small>
           </p>
           <div className="divider">OR</div>
-          <button
+          {/* <button
             onClick={() => signInWithGoogle()}
             className="btn btn-outline font-black"
           >
             Continue With Google
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
