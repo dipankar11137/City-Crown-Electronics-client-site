@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AppleProduct from "./AppleProduct";
 
 const AppleProducts = () => {
   const [appleProducts, setAppleProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/mainProducts")
+    fetch("http://localhost:5000/appleProducts")
       .then((res) => res.json())
       .then((data) => setAppleProducts(data));
   }, [appleProducts]);
@@ -23,6 +24,11 @@ const AppleProducts = () => {
           ))}
         </div>
         ;
+      </div>
+      <div className=" flex justify-end pb-3 pr-9">
+        <Link to="/allAppleProducts">
+          <button className="btn">show all</button>
+        </Link>
       </div>
     </div>
   );

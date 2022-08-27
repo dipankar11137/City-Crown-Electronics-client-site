@@ -13,6 +13,7 @@ import NotFound from "./Components/Pages/Share/NotFound";
 import RequireAuth from "./Components/Login/RequireAuth";
 import AppleInventory from "./Components/Pages/Home/AppleInventory";
 import AppleProductDetails from "./Components/Pages/Home/AppleProductDetails";
+import AppleProductsAll from "./Components/Pages/Home/AppleProductsAll";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/allAppleProducts" element={<AppleProductsAll />} />
         <Route path="/inventory/:id" element={<AppleInventory />} />
         <Route path="/details/:id" element={<AppleProductDetails />} />
         <Route path="/about" element={<About />} />

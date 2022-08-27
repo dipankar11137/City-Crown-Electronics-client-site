@@ -1,17 +1,69 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AppleInventory = () => {
   const { id } = useParams();
-  console.log(id);
-  const [item, setItem] = useState({});
+  const [appleProduct, setAppleProduct] = useState({});
+  const [update, setUpdate] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/appleProducts/${id}`)
+      .then((res) => res.json())
+      .then((data) => setAppleProduct(data));
+  }, [update]);
+
+  // delivery
+  const handleDeliverd = () => {
+    if (appleProduct?.quantity > 0) {
+      const newQuantity = parseInt(appleProduct.quantity) - 1;
+      const updateQuantity = { quantity: newQuantity };
+
+      fetch(`http://localhost:5000/appleProducts/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateQuantity),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setUpdate(data);
+          toast.success("Product Delivery Successful");
+        });
+    } else {
+      toast.error("Sold Out");
+    }
+  };
+
+  // Restock
+  const handleRestock = (event) => {
+    event.preventDefault();
+    const newQuantity =
+      parseInt(event.target.quantity.value) + parseInt(appleProduct.quantity);
+    console.log(newQuantity);
+    const updateQuantity = { quantity: newQuantity };
+    fetch(`http://localhost:5000/appleProducts/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateQuantity),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUpdate(data);
+        toast.success("Restock Is Successfully");
+        event.target.reset();
+      });
+  };
 
   return (
-    <div className="bg-white">
+    <div className="bg-zinc-300">
       <h2 className="text-primary text-center text-2xl font-bold my-5">
-        {item.name} <span className="text-neutral">Details</span>
+        {appleProduct.name} <span className="text-neutral">Details</span>
       </h2>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center appleProducts-center">
         <div class="card bg-base-100 shadow-xl">
           <div
             data-aos="zoom-in"
@@ -22,7 +74,7 @@ const AppleInventory = () => {
             data-aos-once="true"
           >
             <figure>
-              <img src={item.picture} alt="Shoes" />
+              <img src={appleProduct.img} alt="Shoes" />
             </figure>
           </div>
           <div class="card-body">
@@ -35,14 +87,14 @@ const AppleInventory = () => {
               data-aos-once="true"
             >
               <h2 class="card-title">
-                {item.name}
-                <div class="badge badge-primary">TOP</div>
+                {appleProduct.name}
+                <div class="badge badge-orange-600">{appleProduct.status}</div>
               </h2>
-              <p>{item.description}</p>
-              <p>Item Id No: {item._id} </p>
-              <p>Price : {item.price} $</p>
-              <p>Quantity : {item.quantity}</p>
-              <p>Supplier Name : {item.supplierName}</p>
+              <p>{appleProduct.description}</p>
+              <p>appleProduct Id No: {appleProduct._id} </p>
+              <p>Price : {appleProduct.price} $</p>
+              <p>Quantity : {appleProduct.quantity}</p>
+              <p>Supplier Name : {appleProduct.supplierName}</p>
             </div>
             <div class="card-actions justify-end">
               <div
@@ -53,8 +105,10 @@ const AppleInventory = () => {
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
               >
-                {" "}
-                <div class="badge badge-outline p-5 btn-primary text-white  font-bold">
+                <div
+                  onClick={() => handleDeliverd()}
+                  class="badge p-5 btn-orange-600 text-white cursor-pointer font-bold hover:bg-orange-800"
+                >
                   Delivered
                 </div>
               </div>
@@ -63,7 +117,7 @@ const AppleInventory = () => {
         </div>
       </div>
       <h2 className="text-primary text-center text-2xl font-bold mt-7">
-        {item.name} <span className="text-neutral">Restock</span>
+        {appleProduct.name} <span className="text-neutral">Restock</span>
       </h2>
       <div
         data-aos="zoom-in"
@@ -73,10 +127,10 @@ const AppleInventory = () => {
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
-        <div className="flex justify-center items-center my-5">
+        <div className="flex justify-center appleProducts-center my-5">
           <div class="card  bg-base-100 shadow-xl">
-            <div class="card-body items-center text-center">
-              <form>
+            <div class="card-body appleProducts-center text-center">
+              <form onSubmit={handleRestock}>
                 <input
                   type="number"
                   name="quantity"

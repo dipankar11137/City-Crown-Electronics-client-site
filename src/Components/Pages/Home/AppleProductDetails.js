@@ -7,7 +7,7 @@ const AppleProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/mainProducts/${id}`)
+    fetch(`http://localhost:5000/appleProducts/${id}`)
       // fetch(`http://localhost:5000/mainProducts/630a038e7ca3ac7a7840ba2c`)
       .then((res) => res.json())
       .then((data) => setProduct(data));

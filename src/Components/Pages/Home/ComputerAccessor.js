@@ -1,13 +1,13 @@
 import React from "react";
 
 const ComputerAccessor = ({ computerAccessor }) => {
-  const { img, name, price } = computerAccessor;
+  const { img3, name, price } = computerAccessor;
   return (
     <div class="card lg:w-52 bg-base-100 shadow-xl mt-5 hover:shadow-inner hover:border-1 ">
       <figure>
         <img
           className="w-full h-40	hover:animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite hover:animate-pulse"
-          src={img}
+          src={img3}
           alt={name}
         />
       </figure>

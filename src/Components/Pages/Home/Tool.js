@@ -1,12 +1,12 @@
 import React from "react";
 
 const Tool = ({ tool }) => {
-  const { name, img, description } = tool;
+  const { name, img2, description } = tool;
   return (
     <div class="border sm:w-40 lg:w-56 shadow rounded image-full text-black bg-white hover:shadow-2xl hover:">
       <img
         className="hover:animate-pulse h-40 w-full rounded"
-        src={img}
+        src={img2}
         alt=""
       />
 
