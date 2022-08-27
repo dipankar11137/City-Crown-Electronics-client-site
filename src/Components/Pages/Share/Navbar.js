@@ -22,6 +22,9 @@ const Navbar = () => {
         <Link to="/blogs">Blogs</Link>
       </li>
       <li className="font-bold">
+        <Link to="/dashboard">Dashboard</Link>
+      </li>
+      <li className="font-bold">
         <Link to="/contact">Contact</Link>
       </li>
     </>
@@ -49,7 +52,7 @@ const Navbar = () => {
           </label>
           <ul
             tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            class="menu menu-compact text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {manuItem}
           </ul>

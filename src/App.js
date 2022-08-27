@@ -17,6 +17,9 @@ import AppleProductDetails from "./Components/Pages/Home/AppleProductDetails";
 import AppleProductsAll from "./Components/Pages/Home/AppleProductsAll";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Dashboard from "./Components/Pages/Dashboard/Dashboard";
+import AddItem from "./Components/Pages/Dashboard/AddItem";
+import ManageItem from "./Components/Pages/Dashboard/ManageItem";
 
 function App() {
   return (
@@ -40,6 +43,21 @@ function App() {
         <Route path="/details/:id" element={<AppleProductDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        {/* Dashboard */}
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<AddItem />} />
+          <Route path="manageItem" element={<ManageItem />} />
+        </Route>
+        {/* Dashboard End */}
+
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
