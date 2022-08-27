@@ -11,6 +11,8 @@ import Header from "./Components/Pages/Share/Header";
 import Navbar from "./Components/Pages/Share/Navbar";
 import NotFound from "./Components/Pages/Share/NotFound";
 import RequireAuth from "./Components/Login/RequireAuth";
+import AppleInventory from "./Components/Pages/Home/AppleInventory";
+import AppleProductDetails from "./Components/Pages/Home/AppleProductDetails";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/inventory/:id" element={<AppleInventory />} />
+        <Route path="/details/:id" element={<AppleProductDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUp />} />

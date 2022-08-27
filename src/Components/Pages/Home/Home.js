@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../Share/Footer";
 import Add from "./Add";
+import AppleProducts from "./AppleProducts";
 import Banner from "./Banner";
 import ComputerAccessories from "./ComputerAccessories";
 import Products from "./Products";
@@ -8,7 +9,7 @@ import Tools from "./Tools";
 
 const Home = () => {
   return (
-    <div className="bg-slate-200 text-white">
+    <div className="bg-slate-300 text-white">
       {/* <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="">
           <Add />
@@ -19,7 +20,8 @@ const Home = () => {
       </div> */}
       <Banner />
       <Add />
-      <Products />
+      <AppleProducts />
+      {/* <Products /> */}
       <ComputerAccessories />
       <Tools />
 

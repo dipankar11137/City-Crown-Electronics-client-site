@@ -9,6 +9,7 @@
     "img": "https://i.ibb.co/CtnLknK/laptop1.jpg",
     "img2": "https://i.ibb.co/QXXfprs/laptop.jpg",
     "img3": "https://i.ibb.co/CtnLknK/laptop1.jpg",
+    "status": "New",
     "date": "4-6-22"
   },
   {
@@ -21,6 +22,7 @@
     "img": "https://i.ibb.co/GvkV6h9/monitor-1.jpg",
     "img2": "https://i.ibb.co/cLX24nQ/monitor-2.jpg",
     "img3": "https://i.ibb.co/Xjj46vg/monitor-3.webp",
+    "status": "New",
     "date": "4-5-22"
   },
   {
@@ -33,6 +35,7 @@
     "img": "https://i.ibb.co/M6ndcpb/Phone-1.png",
     "img2": "https://i.ibb.co/T4c1N7z/phone-2.jpg",
     "img3": "https://i.ibb.co/k9wS34L/phone-3.png",
+    "status": "Up Coming",
     "date": "4-7-22"
   },
   {
@@ -45,6 +48,7 @@
     "img": "https://i.ibb.co/s9gY71s/watch-1.jpg",
     "img2": "https://i.ibb.co/prW0XsR/watch-2.jpg",
     "img3": "https://i.ibb.co/zNWDySs/watch-3.jpg",
+    "status": "Top",
     "date": "14-6-22"
   },
   {
@@ -57,6 +61,7 @@
     "img": "https://i.ibb.co/QvHs2LM/ipad-1.jpg",
     "img2": "https://i.ibb.co/1LSyr0K/ipad-2.jpg",
     "img3": "https://i.ibb.co/Y7R0nWQ/ipad-4.jpg",
+    "status": "New",
     "date": "19-5-22"
   },
   {
@@ -69,6 +74,7 @@
     "img": "https://i.ibb.co/b3Y79TF/airpot-1.jpg",
     "img2": "https://i.ibb.co/fY4KRwS/airpot-2.webp",
     "img3": "https://i.ibb.co/2ZRzFsK/airpot-3.jpg",
+    "status": "Up Coming",
     "date": "19-5-22"
   },
   {
@@ -81,6 +87,7 @@
     "img": "https://i.ibb.co/CJVYS06/speaker-1.webp",
     "img2": "https://i.ibb.co/jrhKwp3/speaker-2.webp",
     "img3": "https://i.ibb.co/vdbHLw7/speaker-3.jpg",
+    "status": "Top",
     "date": "23-7-22"
   },
   {
@@ -93,6 +100,7 @@
     "img": "https://i.ibb.co/HzYvm99/headphone-1.jpg",
     "img2": "https://i.ibb.co/HVVBdzZ/headphone-2.jpg",
     "img3": "https://i.ibb.co/kxmxvkk/headphone-3.jpg",
+    "status": "Up Coming",
     "date": "3-3-22"
   },
   {
@@ -105,10 +113,11 @@
     "img": "https://i.ibb.co/xm9xWkW/powerbank.jpg",
     "img2": "https://i.ibb.co/P6kB4Yp/powerbank-2.jpg",
     "img3": "https://i.ibb.co/5TcmCLp/powerbank-3.webp",
+    "status": "New",
     "date": "22-5-22"
   },
   {
-    "_id": 2,
+    "_id": 10,
     "name": "Monitor",
     "price": "230",
     "quantity": "3",
@@ -117,6 +126,7 @@
     "img": "https://i.ibb.co/cLX24nQ/monitor-2.jpg",
     "img2": "https://i.ibb.co/GvkV6h9/monitor-1.jpg",
     "img3": "https://i.ibb.co/Xjj46vg/monitor-3.webp",
+    "status": "Up Coming",
     "date": "4-5-22"
   }
 ]
