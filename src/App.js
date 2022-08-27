@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/Login/SignUp";
 import About from "./Components/Pages/About/About";
@@ -14,6 +15,8 @@ import RequireAuth from "./Components/Login/RequireAuth";
 import AppleInventory from "./Components/Pages/Home/AppleInventory";
 import AppleProductDetails from "./Components/Pages/Home/AppleProductDetails";
 import AppleProductsAll from "./Components/Pages/Home/AppleProductsAll";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -41,6 +44,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

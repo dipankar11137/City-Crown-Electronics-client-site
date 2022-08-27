@@ -13,16 +13,39 @@ const AppleProductDetails = () => {
       .then((data) => setProduct(data));
   }, [product]);
   return (
-    <div className="bg-lime-100 pt-3 ">
-      <div className="flex justify-center">
-        <div class="card w-80 bg-base-100 text-black shadow-xl ">
+    <div className="bg-lime-50 pt-3 h-screen">
+      <div className="flex justify-center pb-16">
+        <div class="card w-80 bg-base-100 text-black shadow-2xl ">
           <figure>
-            <img
+            {/* <img
               className="w-full"
               src={product?.img}
               alt="Shoes"
               style={{ height: "200px" }}
-            />
+            /> */}
+            <div class="carousel carousel-center rounded-box ">
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img} alt="Pizza" />
+              </div>
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img3} alt="Pizza" />
+              </div>
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img2} alt="Pizza" />
+              </div>
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img} alt="Pizza" />
+              </div>
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img3} alt="Pizza" />
+              </div>
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img2} alt="Pizza" />
+              </div>
+              <div class="carousel-item">
+                <img className="w-64" src={product?.img} alt="Pizza" />
+              </div>
+            </div>
           </figure>
           <div class="card-body">
             <h2 class="card-title">
@@ -41,8 +64,8 @@ const AppleProductDetails = () => {
           </div>
         </div>
       </div>
-      {/* <AppleProducts /> */}
-      {/* <Footer /> */}
+      <AppleProducts />
+      <Footer />
     </div>
   );
 };
