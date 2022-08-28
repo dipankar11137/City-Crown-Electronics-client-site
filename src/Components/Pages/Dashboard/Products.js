@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
+import { toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -8,14 +9,28 @@ const Products = () => {
     fetch("http://localhost:5000/appleProducts")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
-
+  }, [products]);
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are You Sure ?");
+    if (proceed) {
+      const url = `http://localhost:5000/appleProducts/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = products.filter((product) => product._id !== id);
+          setProducts(remaining);
+          toast.success("Successfully Delete");
+        });
+    }
+  };
   return (
     <div>
       <div className="grid justify-items-center">
         <div class="text-6xl font-extrabold mb-5 text-center">
           <span class=" bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 uppercase ">
-            Our Main Products
+            Our All Products
           </span>
         </div>
         <div class="card w-10/12 text-black">
@@ -31,13 +46,17 @@ const Products = () => {
                   </th>
                   <th className="bg-rose-700 text-white text-lg">Date</th>
                   <th className="bg-sky-500 text-white text-lg">Details</th>
-                  <th className="bg-fuchsia-700 text-white text-lg">
-                    Add To Card
+                  <th className="bg-red-700 text-white text-lg">
+                    Delete Product
                   </th>
                 </tr>
               </thead>
-              {products.slice(0, 6).map((product) => (
-                <Product key={product._id} product={product}></Product>
+              {products.map((product) => (
+                <Product
+                  key={product._id}
+                  product={product}
+                  handleDelete={handleDelete}
+                ></Product>
               ))}
             </table>
           </div>

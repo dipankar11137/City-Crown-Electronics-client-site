@@ -4,7 +4,6 @@ import Add from "./Add";
 import AppleProducts from "./AppleProducts";
 import Banner from "./Banner";
 import ComputerAccessories from "./ComputerAccessories";
-import Products from "./Products";
 import Tools from "./Tools";
 
 const Home = () => {
