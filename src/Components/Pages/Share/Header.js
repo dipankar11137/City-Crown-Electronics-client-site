@@ -1,6 +1,9 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 const Header = () => {
+  const [user] = useAuthState(auth);
   return (
     <div className="bg-slate-900 text-white py-2 px-6">
       <div className="flex justify-between">
@@ -38,9 +41,22 @@ const Header = () => {
               <span class="badge badge-sm indicator-item">8</span>
             </div>
           </label>
-          <button class="btn bg-lime-400 text-black hover:text-white font-bold">
-            Buy Now
-          </button>
+          {/* img  */}
+          {user && (
+            <div class="avatar online pr-2">
+              <div class="w-7 rounded-full ">
+                {user?.photoURL ? (
+                  <img src={user?.photoURL} alt="" />
+                ) : (
+                  <img
+                    src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
+                    alt=""
+                  />
+                )}
+              </div>
+            </div>
+          )}
+          <button class="btn hover:text-white font-bold ml-3">Buy Now</button>
         </div>
       </div>
     </div>

@@ -26,7 +26,9 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
-  navigate(from, { replace: true });
+  if (user || gUser) {
+    navigate(from, { replace: true });
+  }
 
   if (loading || gLoading) {
     return <Loading></Loading>;
@@ -46,8 +48,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex mt-10 justify-center  bg-backgroundColor">
-      <div className="card w-96 shadow-2xl bg-violet-50">
+    <div className="flex justify-center  bg-slate-300 pb-52 pt-5 ">
+      <div className="card w-96 shadow-2xl bg-violet-50 hover:shadow-inner">
         <div className="card-body">
           <h2 className="text-center text-2xl">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -58,7 +60,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Your Email"
-                className="input input-bordered bg-white w-full max-w-xs"
+                className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
                 {...register("email", {
                   required: {
                     value: true,
@@ -90,7 +92,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="Password"
-                className="input input-bordered bg-white w-full max-w-xs"
+                className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
                 {...register("password", {
                   required: {
                     value: true,
@@ -118,15 +120,15 @@ const Login = () => {
 
             {signInError}
             <input
-              className="btn btn-primary w-full text-white"
+              className="btn btn-orange-500 w-full text-white"
               type="submit"
               value="Login"
             />
           </form>
           <p>
             <small>
-              New to Doctors Portal?{" "}
-              <Link to="/signup" className="text-primary">
+              New to CityCrown Electronics ?{" "}
+              <Link to="/signup" className="text-orange-600">
                 Create New Account
               </Link>
             </small>
@@ -134,7 +136,7 @@ const Login = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-outline font-black hover:bg-orange-500"
+            className="btn btn-orange-500 font-black"
           >
             Continue With Google
           </button>

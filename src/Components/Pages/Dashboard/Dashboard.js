@@ -4,7 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const Dashboard = () => {
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
+  // console.log(user);
   return (
     <div className="bg-slate-100">
       <div>
@@ -17,7 +18,7 @@ const Dashboard = () => {
             <Outlet></Outlet>
           </div>
           <div class="drawer-side ml-4">
-            <label for="dashboard-sidebar" class="drawer-overlay"></label>
+            <label for="dashboard-sidebar" class="drawer-overlay "></label>
             <ul class="menu p-4 overflow-y-auto w-44 bg-base-100 text-base-content">
               <li>
                 <Link

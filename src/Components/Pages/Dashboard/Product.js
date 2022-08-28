@@ -32,7 +32,7 @@ const Product = ({ product, handleDelete }) => {
         </td>
         <th className="bg-fuchsia-200">
           <button onClick={() => handleDelete(_id)} class="btn  btn-xs">
-            Delete{" "}
+            Remove{" "}
           </button>
         </th>
       </tr>

@@ -21,7 +21,7 @@ const Products = () => {
         .then((data) => {
           const remaining = products.filter((product) => product._id !== id);
           setProducts(remaining);
-          toast.success("Successfully Delete");
+          toast.success("Successfully Remove");
         });
     }
   };

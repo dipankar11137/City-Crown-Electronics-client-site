@@ -1,7 +1,7 @@
 import React from "react";
 
 const ComputerAccessor = ({ computerAccessor }) => {
-  const { img3, name, price } = computerAccessor;
+  const { img3, name, price, status } = computerAccessor;
   return (
     <div class="card lg:w-52 bg-base-100 shadow-xl mt-5 hover:shadow-inner hover:border-1 ">
       <figure>

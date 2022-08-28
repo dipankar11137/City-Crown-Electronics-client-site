@@ -27,7 +27,7 @@ const AddItem = () => {
   };
   return (
     <div className=" pb-20">
-      <h2 className="mt-5 ml-10 font-bold text-4xl">Please add a Product</h2>
+      <h2 className="mt-5 ml-10 font-bold text-4xl">Please Add A Product</h2>
       <div className="bg-indigo-100 p-5 rounded-2xl w-11/12 mt-5 ml-5 ">
         <form
           className=" flex justify-center gap-4"
@@ -40,7 +40,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Product name"
-              className="input input-bordered bg-white lg:w-96 sm:w-full max-w-xs"
+              className="input input-bordered bg-white lg:w-96 sm:w-full max-w-xs hover:shadow-xl shadow-inner"
               {...register("name", {
                 required: {
                   value: true,
@@ -61,7 +61,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Images 1 URL"
-              className="input input-bordered bg-white w-full max-w-xs"
+              className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
               {...register("img", {
                 required: {
                   value: true,
@@ -72,7 +72,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Images 2 URL"
-              className="input input-bordered bg-white w-full mt-2 max-w-xs"
+              className="input input-bordered bg-white w-full mt-2 max-w-xs hover:shadow-xl shadow-inner"
               {...register("img2", {
                 required: {
                   value: true,
@@ -83,7 +83,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Images 3 URL"
-              className="input input-bordered bg-white w-full mt-2 max-w-xs"
+              className="input input-bordered bg-white w-full mt-2 max-w-xs hover:shadow-xl shadow-inner"
               {...register("img3", {
                 required: {
                   value: true,
@@ -105,7 +105,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Description"
-              className="input input-bordered bg-white w-full max-w-xs"
+              className="input input-bordered bg-white w-full max-w-xs  hover:shadow-xl shadow-inner"
               {...register("description", {
                 required: {
                   value: true,
@@ -127,7 +127,7 @@ const AddItem = () => {
             <input
               type="number"
               placeholder="Price"
-              className="input input-bordered bg-white w-full max-w-xs"
+              className="input input-bordered bg-white w-full max-w-xs  hover:shadow-xl shadow-inner"
               {...register("price", {
                 required: {
                   value: true,
@@ -152,7 +152,7 @@ const AddItem = () => {
             <input
               type="number"
               placeholder="Input Positive Number"
-              className="input input-bordered  bg-white lg:w-96 sm:w-full max-w-xs"
+              className="input input-bordered  bg-white lg:w-96 sm:w-full max-w-xs  hover:shadow-xl shadow-inner"
               {...register("quantity", {
                 required: {
                   value: true,
@@ -174,7 +174,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Product Status "
-              className="input input-bordered bg-white w-full max-w-xs"
+              className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
               {...register("status", {
                 required: {
                   value: true,
@@ -196,7 +196,7 @@ const AddItem = () => {
             <input
               type="text"
               placeholder="Supplier Name"
-              className="input input-bordered bg-white w-full max-w-xs"
+              className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
               {...register("supplierName", {
                 required: {
                   value: true,
@@ -218,7 +218,7 @@ const AddItem = () => {
             <input
               type="date"
               placeholder="Date "
-              className="input input-bordered bg-white w-full max-w-xs"
+              className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
               {...register("date", {
                 required: {
                   value: true,

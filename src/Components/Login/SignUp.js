@@ -29,7 +29,9 @@ const SignUp = () => {
 
   let from = location.state?.from?.pathname || "/";
 
-  navigate(from, { replace: true });
+  if (user || gUser) {
+    navigate(from, { replace: true });
+  }
 
   let signInError;
 
@@ -55,8 +57,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex mt-1 justify-center  bg-backgroundColor">
-      <div className="card w-96 shadow-xl mt-5 bg-violet-50">
+    <div className="flex justify-center pt-2 bg-slate-300">
+      <div className="card w-96 shadow-2xl bg-violet-50 hover:shadow-inner">
         <div className="card-body">
           <h2 className="text-center text-2xl">SignUp</h2>
 
@@ -68,7 +70,7 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="Your name"
-                className="input input-bordered bg-white w-full max-w-xs"
+                className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
                 {...register("name", {
                   required: {
                     value: true,
@@ -91,7 +93,7 @@ const SignUp = () => {
               <input
                 type="email"
                 placeholder="Your Email"
-                className="input input-bordered bg-white w-full max-w-xs"
+                className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
                 {...register("email", {
                   required: {
                     value: true,
@@ -123,7 +125,7 @@ const SignUp = () => {
               <input
                 type="password"
                 placeholder="Password"
-                className="input input-bordered bg-white w-full max-w-xs"
+                className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner"
                 {...register("password", {
                   required: {
                     value: true,
@@ -150,7 +152,7 @@ const SignUp = () => {
             </div>
             {signInError}
             <input
-              className="btn btn-primary w-full text-white"
+              className="btn btn-orange-500 w-full text-white"
               type="submit"
               value="Sign Up"
             />
@@ -158,7 +160,7 @@ const SignUp = () => {
           <p>
             <small>
               Already Have an Account ?{" "}
-              <Link to="/login" className="text-primary">
+              <Link to="/login" className="text-orange-500">
                 Please Login
               </Link>
             </small>
@@ -166,7 +168,7 @@ const SignUp = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-outline font-black hover:bg-orange-500"
+            className="btn btn-orange-500 font-black "
           >
             Continue With Google
           </button>
