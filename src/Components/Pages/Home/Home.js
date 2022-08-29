@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../Share/Footer";
 import Add from "./Add";
+import AddToText from "./AddToText";
 import AppleProducts from "./AppleProducts";
 import Banner from "./Banner";
 import ComputerAccessories from "./ComputerAccessories";
@@ -18,12 +19,13 @@ const Home = () => {
         </div>
       </div> */}
       <Banner />
-      <Add />
+      {/* <Add /> */}
+
       <AppleProducts />
       {/* <Products /> */}
       <ComputerAccessories />
       <Tools />
-
+      {/* <AddToText /> */}
       <Footer />
     </div>
   );

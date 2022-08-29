@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import "../../CSS/PicStyle.css";
 
 const AppleProduct = ({ appleProduct }) => {
   const { _id, img, name, price, description, status } = appleProduct;
@@ -16,7 +17,7 @@ const AppleProduct = ({ appleProduct }) => {
       <div class="card w-80 bg-base-100 text-black shadow-2xl hover:shadow-inner">
         <figure>
           <img
-            className="w-full"
+            className="w-full pic-style"
             src={img}
             alt="Shoes"
             style={{ height: "200px" }}

@@ -20,6 +20,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import AddItem from "./Components/Pages/Dashboard/AddItem";
 import ManageItem from "./Components/Pages/Dashboard/ManageItem";
+// animation
+import "animate.css/animate.min.css";
+import Aos from "aos";
+
+Aos.init();
 
 function App() {
   return (
