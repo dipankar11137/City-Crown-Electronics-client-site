@@ -17,9 +17,12 @@ const MyItems = () => {
     myItems();
   }, [user]);
   return (
-    <div>
-      <h1> My Items </h1>
-      <div className="px-20">
+    <div className="bg-slate-300 h-screen">
+      <h1 className="text-center text-orange-500 font-bold text-5xl p-4">
+        {" "}
+        <samp className="text-lime-600">My</samp> Items{" "}
+      </h1>
+      <div className="px-56">
         {items.map((item) => (
           <MyItem key={item._id} item={item}></MyItem>
         ))}

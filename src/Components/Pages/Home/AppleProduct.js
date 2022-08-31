@@ -13,7 +13,7 @@ const AppleProduct = ({ appleProduct }) => {
     navigate(`/inventory/${id}`);
   };
   return (
-    <AnimationOnScroll animateIn="animate__bounceIn" duration={7}>
+    <AnimationOnScroll animateIn="animate__bounceIn" duration={5}>
       <div class="card w-64 bg-base-100 text-black shadow-2xl hover:shadow-inner">
         <figure>
           <img
