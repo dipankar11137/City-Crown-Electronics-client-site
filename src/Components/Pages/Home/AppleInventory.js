@@ -8,7 +8,7 @@ const AppleInventory = () => {
   const [update, setUpdate] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/appleProducts/${id}`)
+    fetch(`https://stark-spire-19455.herokuapp.com/appleProducts/${id}`)
       .then((res) => res.json())
       .then((data) => setAppleProduct(data));
   }, [update]);
@@ -19,7 +19,7 @@ const AppleInventory = () => {
       const newQuantity = parseInt(appleProduct.quantity) - 1;
       const updateQuantity = { quantity: newQuantity };
 
-      fetch(`http://localhost:5000/appleProducts/${id}`, {
+      fetch(`https://stark-spire-19455.herokuapp.com/appleProducts/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -43,7 +43,7 @@ const AppleInventory = () => {
       parseInt(event.target.quantity.value) + parseInt(appleProduct.quantity);
     console.log(newQuantity);
     const updateQuantity = { quantity: newQuantity };
-    fetch(`http://localhost:5000/appleProducts/${id}`, {
+    fetch(`https://stark-spire-19455.herokuapp.com/appleProducts/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -66,7 +66,7 @@ const AppleInventory = () => {
             <div>
               <figure>
                 <img
-                  className="h-56 rounded-xl pt-2"
+                  className="h-56 rounded-xl pt-2 pic-style"
                   src={appleProduct.img}
                   alt="Shoes"
                 />

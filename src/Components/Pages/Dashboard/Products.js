@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Product from "./Product";
 import { toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+
+  const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/appleProducts")
+    fetch("https://stark-spire-19455.herokuapp.com/appleProducts")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure ?");
     if (proceed) {
-      const url = `http://localhost:5000/appleProducts/${id}`;
+      const url = `https://stark-spire-19455.herokuapp.com/appleProducts/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -24,6 +26,9 @@ const Products = () => {
           toast.success("Successfully Remove");
         });
     }
+  };
+  const handleDetails = (id) => {
+    navigate(`/details/${id}`);
   };
   return (
     <div>
@@ -56,6 +61,7 @@ const Products = () => {
                   key={product._id}
                   product={product}
                   handleDelete={handleDelete}
+                  handleDetails={handleDetails}
                 ></Product>
               ))}
             </table>

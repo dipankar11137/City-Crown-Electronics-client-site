@@ -10,7 +10,9 @@ const ComputerAccessories = () => {
   }, []);
   return (
     <div className="bg-zinc-200 text-black lg:mx-28 rounded-lg">
-      <h1 className="text-4xl text-center font-bold p-3 ">Computer Accessor</h1>
+      <h1 className="text-lime-700 text-center text-5xl font-bold my-5 p-3">
+        Computer <span className="text-neutral">Accessor</span>
+      </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-5 lg:ml-6 p-3">
         {computerAccessors.slice(0, 11).map((computerAccessor) => (
           <ComputerAccessor

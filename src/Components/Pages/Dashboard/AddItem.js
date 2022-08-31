@@ -1,8 +1,13 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import auth from "../../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
+
   const {
     register,
     formState: { errors },
@@ -11,7 +16,7 @@ const AddItem = () => {
   } = useForm();
   const onSubmit = (data) => {
     // console.log(data);
-    const url = `http://localhost:5000/appleProducts`;
+    const url = `https://stark-spire-19455.herokuapp.com/appleProducts`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -233,9 +238,24 @@ const AddItem = () => {
                 </span>
               )}
             </label>
+            {/* Email */}
+            <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input
+              type="text"
+              value={user?.email}
+              className="input input-bordered bg-white w-full max-w-xs hover:shadow-xl shadow-inner cursor-not-allowed disabled:opacity-75"
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Available Quantity is Required",
+                },
+              })}
+            />
 
             <input
-              className="btn  w-full text-white"
+              className="btn mt-5 w-full text-white"
               type="submit"
               value="ADD"
             />

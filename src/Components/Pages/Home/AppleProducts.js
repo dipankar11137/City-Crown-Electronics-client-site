@@ -5,14 +5,14 @@ import AppleProduct from "./AppleProduct";
 const AppleProducts = () => {
   const [appleProducts, setAppleProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/appleProducts")
+    fetch("https://stark-spire-19455.herokuapp.com/appleProducts")
       .then((res) => res.json())
       .then((data) => setAppleProducts(data));
   }, [appleProducts]);
   return (
     <div className="bg-slate-200 lg:m-4 rounded-2xl">
       <div className="px-12 mx-auto  mb-4">
-        <h1 className="text-primary text-center text-5xl font-bold my-5 p-3">
+        <h1 className="text-lime-700 text-center text-5xl font-bold my-5 p-3">
           Apple <span className="text-neutral">Items</span>
         </h1>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

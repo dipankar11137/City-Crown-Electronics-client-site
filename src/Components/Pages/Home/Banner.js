@@ -11,7 +11,7 @@ const Banner = () => {
     <div className=" ">
       <div>
         <div
-          class="hero min-h-screen pb-20 "
+          class="hero min-h-screen pb-20 opacity-80 "
           style={{
             background: `url(${apple})`,
             backgroundSize: "cover",
@@ -36,7 +36,7 @@ const Banner = () => {
 
             <div>
               <div>
-                <h1 class="text-5xl font-bold text-lime-500">
+                <h1 class="text-5xl font-bold  text-lime-500">
                   City<span className="text-orange-500">Crow</span>n
                   <span className="text-lime-500"> Electronics</span>
                 </h1>

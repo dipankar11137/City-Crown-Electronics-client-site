@@ -26,6 +26,11 @@ const Navbar = () => {
           <Link to="/dashboard">Dashboard</Link>
         </li>
       )}
+      {user && (
+        <li className="font-bold">
+          <Link to="/myItems">My Items</Link>
+        </li>
+      )}
       <li className="font-bold">
         <Link to="/contact">Contact</Link>
       </li>

@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Product = ({ product, handleDelete }) => {
+const Product = ({ product, handleDelete, handleDetails }) => {
   const { _id, img, name, price, description, supplierName, date, quantity } =
     product;
 
@@ -26,9 +27,15 @@ const Product = ({ product, handleDelete }) => {
         <td className="bg-lime-100">{supplierName}</td>
         <td className="bg-rose-100">{date}</td>
         <td className="bg-sky-100">
-          <button className="btn btn-sm btn-info hover:btn-warning">
-            Details
-          </button>
+          <Link to="/">
+            {" "}
+            <button
+              onClick={() => handleDetails(_id)}
+              className="btn btn-sm btn-info hover:btn-warning"
+            >
+              Details
+            </button>
+          </Link>
         </td>
         <th className="bg-fuchsia-200">
           <button onClick={() => handleDelete(_id)} class="btn  btn-xs">

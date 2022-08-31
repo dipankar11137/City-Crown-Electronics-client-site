@@ -6,7 +6,7 @@ import {
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-
+import axios from "axios";
 import Loading from "../Pages/Share/Loading";
 
 const Login = () => {
@@ -18,6 +18,7 @@ const Login = () => {
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
   //   const [token] = useToken(user || gUser);
 
   let signInError;
@@ -42,9 +43,16 @@ const Login = () => {
     );
   }
 
-  const onSubmit = (data) => {
-    console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
+  const onSubmit = async (data) => {
+    const email = data.email;
+    await signInWithEmailAndPassword(data.email, data.password);
+    const { accesstoken } = await axios.post(
+      "https://stark-spire-19455.herokuapp.com/login",
+      {
+        email,
+      }
+    );
+    console.log(accesstoken);
   };
 
   return (

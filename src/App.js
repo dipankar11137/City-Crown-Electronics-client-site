@@ -23,6 +23,7 @@ import ManageItem from "./Components/Pages/Dashboard/ManageItem";
 // animation
 import "animate.css/animate.min.css";
 import Aos from "aos";
+import MyItems from "./Components/Pages/MyItems/MyItems";
 
 Aos.init();
 
@@ -48,6 +49,14 @@ function App() {
         <Route path="/details/:id" element={<AppleProductDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/myItems"
+          element={
+            <RequireAuth>
+              <MyItems />
+            </RequireAuth>
+          }
+        />
         {/* Dashboard */}
         <Route
           path="/dashboard"

@@ -11,9 +11,9 @@ const Tools = () => {
   return (
     <div className="sm:mb-2 sm:p-0 lg:mb-6 lg:p-6  bg-stone-200 mx-8 rounded-lg my-6">
       <div class="lg:text-5xl  text-center font-extrabold mb-5">
-        <span class="bg-clip-text  text-transparent bg-gradient-to-r from-pink-900 to-violet-900 uppercase">
-          Mobile Phone Accessories
-        </span>
+        <h1 className="text-lime-700 text-center text-5xl font-bold p-3">
+          Mobile Phone <span className="text-neutral">Accessories</span>
+        </h1>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 sm:gap-0 lg:gap-4 ">
         {tools.map((tool) => (

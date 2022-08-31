@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 const Header = () => {
   const [user] = useAuthState(auth);
+  // console.log(user.photoURL);
   return (
     <div className="bg-slate-900 text-white py-2 px-6">
       <div className="flex justify-between">
@@ -45,9 +46,10 @@ const Header = () => {
           {user && (
             <div class="avatar online pr-2">
               <div class="w-7 rounded-full ">
-                {user?.photoURL ? (
+                {user.photoURL ? (
                   <img src={user?.photoURL} alt="" />
                 ) : (
+                  // <h1>D</h1>
                   <img
                     src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
                     alt=""
