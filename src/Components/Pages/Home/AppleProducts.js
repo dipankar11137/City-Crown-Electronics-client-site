@@ -15,7 +15,7 @@ const AppleProducts = () => {
         <h1 className="text-lime-700 text-center text-5xl font-bold my-5 p-3">
           Apple <span className="text-neutral">Items</span>
         </h1>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-3">
           {appleProducts.slice(0, 8).map((appleProduct) => (
             <AppleProduct
               key={appleProduct._id}

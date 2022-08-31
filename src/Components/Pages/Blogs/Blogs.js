@@ -5,7 +5,7 @@ const Blogs = () => {
   return (
     <div className="bg-slate-200 h-full pt-5">
       <div data-aos="fade-up">
-        <div class="card w-11/12 bg-base-100 shadow-xl align-center ml-20 ">
+        <div class="card w-11/12 bg-base-100 shadow-xl align-center ml-20">
           <div class="card-body">
             <h2 class="card-title">1. General Information</h2>
             <p>
