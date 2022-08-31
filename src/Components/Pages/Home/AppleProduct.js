@@ -14,7 +14,7 @@ const AppleProduct = ({ appleProduct }) => {
   };
   return (
     <AnimationOnScroll animateIn="animate__bounceIn" duration={7}>
-      <div class="card w-80 bg-base-100 text-black shadow-2xl hover:shadow-inner">
+      <div class="card w-64 bg-base-100 text-black shadow-2xl hover:shadow-inner">
         <figure>
           <img
             className="w-full pic-style"
