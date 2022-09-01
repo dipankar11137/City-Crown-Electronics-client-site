@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
+import { FaInfo } from "react-icons/fa";
 
 const Product = ({ product, handleDelete, handleDetails }) => {
   const { _id, img, name, price, description, supplierName, date, quantity } =
@@ -31,15 +33,18 @@ const Product = ({ product, handleDelete, handleDetails }) => {
             {" "}
             <button
               onClick={() => handleDetails(_id)}
-              className="btn btn-sm btn-info hover:btn-warning"
+              className="btn btn-sm btn-lime-500 hover:btn-warning text-white"
             >
-              Details
+              <FaInfo />
             </button>
           </Link>
         </td>
         <th className="bg-fuchsia-200">
-          <button onClick={() => handleDelete(_id)} class="btn  btn-xs">
-            Remove{" "}
+          <button
+            onClick={() => handleDelete(_id)}
+            class="btn btn-sm btn-lime-500 hover:btn-warning text-white"
+          >
+            <FaTrash />{" "}
           </button>
         </th>
       </tr>
