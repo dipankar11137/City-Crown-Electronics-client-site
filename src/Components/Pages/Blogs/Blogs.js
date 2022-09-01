@@ -325,6 +325,7 @@ const Blogs = () => {
       </div>
       <Footer />
     </div> */}
+      <Footer />
     </div>
   );
 };
